@@ -1,0 +1,8 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+Flask
+Werkzeug
+PyPDF2
+python-docx
+torch
+sentence-transformers
+gunicorn

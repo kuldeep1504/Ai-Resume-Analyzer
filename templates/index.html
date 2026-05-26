@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Resume Analyzer AI 🚀</h1>
+            <p>Upload your resume and compare it against the job description using advanced NLP.</p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="card">
+            <form id="analyzer-form">
+                
+                <!-- Upload Resume -->
+                <div class="form-group">
+                    <label for="resume">Upload Resume (PDF/DOCX)</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                    </div>
+                </div>
+
+                <!-- Job Description Textbox -->
+                <div class="form-group">
+                    <label for="job_description">Job Description</label>
+                    <textarea id="job_description" name="job_description" rows="6" placeholder="Paste the job description here..." required></textarea>
+                </div>
+
+                <!-- Analyze Button -->
+                <button type="submit" id="analyze-btn">
+                    <span id="btn-text">Analyze Resume</span>
+                    <div id="loader" class="spinner hidden"></div>
+                </button>
+            </form>
+        </main>
+
+        <!-- Results Section -->
+        <section id="results-section" class="card hidden">
+            <h2>Analysis Results 📊</h2>
+            
+            <div class="score-container">
+                <div class="score-circle">
+                    <span id="match-score">0%</span>
+                </div>
+                <p>Match Score</p>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-box">
+                    <h3>Extracted Skills ✅</h3>
+                    <ul id="extracted-skills" class="skills-list"></ul>
+                </div>
+
+                <div class="result-box">
+                    <h3>Missing Skills ❌</h3>
+                    <ul id="missing-skills" class="skills-list"></ul>
+                </div>
+            </div>
+
+            <div class="suggestions-box">
+                <h3>Suggestions for Improvement 💡</h3>
+                <ul id="suggestions-list"></ul>
+            </div>
+        </section>
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>
